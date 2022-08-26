@@ -20,4 +20,5 @@ int main(void){
     cudaDeviceSynchronize();
     cudaDeviceReset();
 
+    return 0;
 }

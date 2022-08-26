@@ -39,4 +39,7 @@ int main(void){
     indexCalculation_blockgridThread<<<grid,block>>>(input);
     cudaDeviceSynchronize();
     cudaDeviceReset();
+
+    cudaFree(input);
+    return 0;
 }

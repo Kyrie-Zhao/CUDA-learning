@@ -2,7 +2,7 @@
 
 #### __host__ ​ __device__ ​cudaError_t cudaDeviceSynchronize ( void ): Wait for compute device to finish. 
 
-#### __host__ ​cudaError_t cudaDeviceReset ( void ) Destroy all allocations and reset all state on the current device in the current process. 
+#### __host__ ​cudaError_t cudaDeviceReset ( void ): Destroy all allocations and reset all state on the current device in the current process. 
 
 #### cudaDeviceProp CUDA device properties 
 

@@ -9,4 +9,7 @@
 #### 如果需要计算N*N的矩阵，我们就需要(N/blockDim.x,N/blockDim.y) 个block
 
 #### 每个block的运行是相互独立的，这就意味着它们可能是并行，可能是串行。程序（小绿）被分成了8个block（小橙），丢给GPU（小蓝）去运行。有的小蓝（左边）只有两个核心，所以一次最多同时处理两个block，那就要分四批去处理。但是有的小蓝（右边）天赋异禀有四个核心，每次同时跑4个block，就只需要两批处理，比左边的小蓝快了一倍。
-![avatar](https://pic4.zhimg.com/80/v2-41fb95f59f9735b04fa1431c3907d13b_720w.jpg)
+
+<p align="center">
+  <img width="250" src="https://pic4.zhimg.com/80/v2-41fb95f59f9735b04fa1431c3907d13b_720w.jpg">
+</p>

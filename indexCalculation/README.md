@@ -5,9 +5,12 @@
 #### __host__ ​cudaError_t cudaMemcpy ( void* dst, const void* src, size_t count, cudaMemcpyKind kind ): Copies data between host and device. 
 
 #### 
-blockIdx.x : 3, threadIdx.x : 0, offset : 12, value : 12 &nbsp;
-blockIdx.x : 3, threadIdx.x : 1, offset : 12, value : 15 &nbsp;
-blockIdx.x : 3, threadIdx.x : 2, offset : 12, value : 14 &nbsp;
+blockIdx.x : 3, threadIdx.x : 0, offset : 12, value : 12 
+&nbsp;
+blockIdx.x : 3, threadIdx.x : 1, offset : 12, value : 15 
+&nbsp;
+blockIdx.x : 3, threadIdx.x : 2, offset : 12, value : 14 
+&nbsp;
 blockIdx.x : 3, threadIdx.x : 3, offset : 12, value : 0 &nbsp;
 blockIdx.x : 0, threadIdx.x : 0, offset : 0, value : 5 &nbsp;
 blockIdx.x : 0, threadIdx.x : 1, offset : 0, value : 2 &nbsp;

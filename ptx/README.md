@@ -1,5 +1,7 @@
 ## ptx
 
+### Command: nvcc -ptx ptx.cu & g++ ptx.cc -o ptx -ldl -lpthread -L/usr/local/cuda-10.2/lib64 -lcudart -lcuda -lstdc++ 
+
 #### 将.cu编译成.ptx，然后在源码中加载这个.ptx并使用里面的func，其中.ptx是与平台无关的汇编代码
 
 #### CUresult cuDeviceGetCount ( int* count ): Returns the number of compute-capable devices. 

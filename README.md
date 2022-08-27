@@ -7,7 +7,6 @@
 - Sum Array with Error Handling
 - ptx
 - Warps
-- Warps Divergence
 - Simple Occupancy
 - Clock
 - Stream Priority

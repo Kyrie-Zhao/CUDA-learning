@@ -1,5 +1,6 @@
 #include <cuda_runtime.h>
 #include <stdio.h>
+
 extern "C" __global__ void kernel_run(){
     printf("Hello World\n");
 }
@@ -9,8 +10,9 @@ extern "C" __global__ void charPrint(int *input1, int *input2){
 }
 
 extern "C" __global__ void add(int *sum, int *input1,int *input2){
+    
     *sum = *input1+*input2;
-    printf("sum = %d\n",&sum);
+    printf("sum = %d\n",*sum);
 }
 
 

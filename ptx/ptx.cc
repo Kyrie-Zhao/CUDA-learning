@@ -85,7 +85,10 @@ int main(){
     int sum_result;
     cudaMemcpy(&sum_result,c,sizeof(int),cudaMemcpyDeviceToHost);
     printf("result on host: %d\n",sum_result);
-      printf("Run Kernel 3 Success \n");
+    printf("Run Kernel 3 Success \n");
 
+    cudaFree(a);
+    cudaFree(b);
+    cudaFree(c);
     return 1;
 }

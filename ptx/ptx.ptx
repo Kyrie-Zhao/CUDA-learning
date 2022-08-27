@@ -17,8 +17,9 @@
 	.param .b64 vprintf_param_1
 )
 ;
-.global .align 1 .b8 $str[12] = {72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 0};
-.global .align 1 .b8 $str1[28] = {105, 110, 112, 117, 116, 32, 49, 58, 32, 37, 99, 32, 61, 61, 32, 32, 105, 110, 112, 117, 116, 32, 50, 58, 32, 37, 99, 0};
+.global .align 1 .b8 $str[13] = {72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100, 10, 0};
+.global .align 1 .b8 $str1[29] = {105, 110, 112, 117, 116, 32, 49, 58, 32, 37, 100, 32, 126, 126, 126, 32, 105, 110, 112, 117, 116, 32, 50, 58, 32, 37, 100, 10, 0};
+.global .align 1 .b8 $str2[10] = {115, 117, 109, 32, 61, 32, 37, 100, 10, 0};
 
 .visible .entry kernel_run(
 
@@ -105,20 +106,52 @@
 	.param .u64 add_param_2
 )
 {
-	.reg .b32 	%r<4>;
-	.reg .b64 	%rd<7>;
+	.local .align 8 .b8 	__local_depot2[16];
+	.reg .b64 	%SP;
+	.reg .b64 	%SPL;
+	.reg .b32 	%r<5>;
+	.reg .b64 	%rd<13>;
 
 
+	mov.u64 	%SPL, __local_depot2;
+	cvta.local.u64 	%SP, %SPL;
 	ld.param.u64 	%rd1, [add_param_0];
 	ld.param.u64 	%rd2, [add_param_1];
 	ld.param.u64 	%rd3, [add_param_2];
 	cvta.to.global.u64 	%rd4, %rd1;
 	cvta.to.global.u64 	%rd5, %rd3;
 	cvta.to.global.u64 	%rd6, %rd2;
+	add.u64 	%rd7, %SP, 0;
+	add.u64 	%rd8, %SPL, 0;
+	add.u64 	%rd9, %SP, 8;
+	add.u64 	%rd10, %SPL, 8;
+	st.local.u64 	[%rd8], %rd1;
 	ld.global.u32 	%r1, [%rd6];
 	ld.global.u32 	%r2, [%rd5];
 	add.s32 	%r3, %r2, %r1;
 	st.global.u32 	[%rd4], %r3;
+	st.local.u64 	[%rd10], %rd7;
+	mov.u64 	%rd11, $str2;
+	cvta.global.u64 	%rd12, %rd11;
+	// Callseq Start 2
+	{
+	.reg .b32 temp_param_reg;
+	// <end>}
+	.param .b64 param0;
+	st.param.b64	[param0+0], %rd12;
+	.param .b64 param1;
+	st.param.b64	[param1+0], %rd9;
+	.param .b32 retval0;
+	call.uni (retval0), 
+	vprintf, 
+	(
+	param0, 
+	param1
+	);
+	ld.param.b32	%r4, [retval0+0];
+	
+	//{
+	}// Callseq End 2
 	ret;
 }
 

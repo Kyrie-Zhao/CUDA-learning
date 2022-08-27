@@ -17,4 +17,6 @@
 
 #### __host__ ​cudaError_t cudaLaunchKernel ( const void* func, dim3 gridDim, dim3 blockDim, void** args, size_t sharedMem, cudaStream_t stream ): Launches a device function. 
 
+#### cuKernelLaunch的參數設置注意。
+
 ![avatar](http://docs.nvidia.com/cuda/parallel-thread-execution/graphics/memory-hierarchy.png)

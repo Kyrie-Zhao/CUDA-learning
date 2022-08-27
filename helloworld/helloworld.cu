@@ -43,6 +43,7 @@ int main(void){
         std::cout<<"Warp Size: "<<devProp.warpSize<<std::endl;
         std::cout<<"Device can possibly execute multiple kernels concurrently: "<<devProp.concurrentKernels<<std::endl;
         std::cout<<"Major compute capability: "<<devProp.major<<std::endl;
+        std::cout<<"Minor compute capability: "<<devProp.minor<<std::endl;
         std::cout<<"Number of multiprocessors on device: "<<devProp.multiProcessorCount<<std::endl;
         std::cout<<"Shared memory available per block in bytes: "<<devProp.sharedMemPerBlock<<std::endl;
         std::cout<<"Maximum number of threads per block: "<<devProp.maxThreadsPerBlock<<std::endl;

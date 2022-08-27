@@ -21,4 +21,6 @@
 
 #### cuKernelLaunch的參數設置注意。
 
+#### void * 不確定類型，取值的時候用(int*)
+
 ![avatar](http://docs.nvidia.com/cuda/parallel-thread-execution/graphics/memory-hierarchy.png)

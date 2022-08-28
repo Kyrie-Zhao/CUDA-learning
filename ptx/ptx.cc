@@ -52,13 +52,14 @@ int main(){
     if(error!=CUDA_SUCCESS){
         printf("CUDA get function error %d\n",error);
     }
-    int input1 = 20;
-    int input2 = 30;
-    void *kernel_params[] ={(int*)&input1,(int*)&input2};
+    //int input1 = 20;
+    //int input2 = 30;
+    void *kernel_params[] ;//={(int*)&input1,(int*)&input2};
     
     //printf("%d\n",*(int*)(kernel_params[0]));
     
     error = cuLaunchKernel(function_kernel_2,1,1,1,1,1,1,NULL,NULL,kernel_params,0);
+    printf("%d\n",*(int*)(kernel_params[0]));
     //printf("%d\n",error);
     cudaThreadSynchronize();
     printf("Run Kernel 2 Success \n\n");

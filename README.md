@@ -5,12 +5,12 @@
 - Index Calculations
 - Sum Array
 - Sum Array with Error Handling
-- ptx
+- PTX (C++ call CUDA kernel)
 - Warps
 - Simple Occupancy
 - Clock
 - Stream Priority
 - Matrix Mul
-- Vector Add with NVRTC
+- Overload
 - Conv Kernel Implementation
 - Concurrent Kernels

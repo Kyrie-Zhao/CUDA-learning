@@ -104,6 +104,7 @@ int main(int argc, char **argv) {
     cudaEventRecord(ev_start_hi, st_hi);
 
     for (int i = 0; i < TOTAL_SIZE; i += EACH_SIZE) {
+        printf("Memcpy Kernel\n");
         int j = i / sizeof(int);
         memcpy_kernel<<<TBLOCKS, THREADS, 0, st_low>>>(d_dst_low + j, d_src_low + j,EACH_SIZE);
         memcpy_kernel<<<TBLOCKS, THREADS, 0, st_hi>>>(d_dst_hi + j, d_src_hi + j,EACH_SIZE);

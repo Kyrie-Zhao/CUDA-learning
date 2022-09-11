@@ -14,3 +14,4 @@
 - Overload
 - Conv Kernel Implementation
 - Concurrent Kernels
+- AlexNet

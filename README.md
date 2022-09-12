@@ -15,3 +15,7 @@
 - Conv Kernel Implementation
 - Concurrent Kernels
 - AlexNet
+
+
+### A good reference for CUDA memory hierarchy:
+https://arxiv.org/pdf/1804.06826.pdf

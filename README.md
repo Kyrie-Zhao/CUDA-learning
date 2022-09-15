@@ -13,6 +13,7 @@
 - Matrix Mul
 - Overload
 - Conv Kernel Implementation
+- Conv Kernel with PTX
 - Concurrent Kernels
 - AlexNet
 
